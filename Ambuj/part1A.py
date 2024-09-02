@@ -38,7 +38,7 @@ def plot_hist(trial):
     fig, axs = plt.subplots(figsize=(10, 7), tight_layout=True)
 
     ## Write your code here
-    plt.hist(trial, bins=40 if len(trial) > 1000 else 20 if len(trial) > 100 else 10, range=(30, 70), color='green',
+    plt.hist(trial, bins=40 if len(trial) > 1000 else 20 if len(trial) > 100 else 10, range=(30, 70), color='cyan',
              edgecolor='black')
     axs.set_title(f'Histogram of Number of Heads for {num_trials} Trials')
     axs.set_xlabel('Number of Heads')
