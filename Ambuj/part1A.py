@@ -1,5 +1,4 @@
 from matplotlib import pyplot as plt
-import numpy as np
 import random
 
 random.seed(45)
@@ -22,7 +21,7 @@ def toss(num_trials):
 
     ## Write your code here
     for i in range(num_trials):
-        results.append(sum(random.choice([0, 1]) for j in range(num_coins)))  # 1 represents heads and 0 represents
+        results.append(sum(random.choice([0, 1]) for _ in range(num_coins)))  # 1 represents heads and 0 represents
         # tails. So by summing all the values obtained we can get no of heads.
     return results
 
@@ -39,7 +38,8 @@ def plot_hist(trial):
     fig, axs = plt.subplots(figsize=(10, 7), tight_layout=True)
 
     ## Write your code here
-    plt.hist(trial, color='skyblue', edgecolor='black')
+    plt.hist(trial, bins=40 if len(trial) > 1000 else 20 if len(trial) > 100 else 10, range=(30, 70), color='cyan',
+             edgecolor='black')
     axs.set_title(f'Histogram of Number of Heads for {num_trials} Trials')
     axs.set_xlabel('Number of Heads')
     axs.set_ylabel('Frequency')
