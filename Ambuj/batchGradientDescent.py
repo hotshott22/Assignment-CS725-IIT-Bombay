@@ -146,12 +146,12 @@ def plot_loss(error_list, total_epochs):
   '''
   # Complete this function to plot the graph of losses stored in model's "error_list"
   plt.figure(figsize=(10, 6))
-  plt.plot(range(1, total_epochs + 1), error_list, marker='o', linestyle='-', color='b')
+  plt.plot(range(1, total_epochs + 1), error_list, color='b')
   plt.xlabel('Epochs')
   plt.ylabel('RMSE Loss')
   plt.title('Loss vs. Epochs')
-  plt.grid(True)
   plt.savefig("plot_loss.png")
+  plt.close()
   #raise NotImplementedError()
 
 def plot_learned_equation(X, y, y_hat):
@@ -170,14 +170,14 @@ def plot_learned_equation(X, y, y_hat):
     # Use y_hat to plot the line. DO NOT use y.
 
     plt.scatter(X[:, 1], y, color='blue', label='True Data Points')
-    plt.plot(X[:, 1], y_hat, color='red', label='Fitted Line')
+    plt.plot(X[:, 1], y_hat, color='red')
 
     # Add labels and legend
-    plt.xlabel('Feature Value')
-    plt.ylabel('Target Value')
-    plt.title('Predicted vs. True Data')
-    plt.legend()
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title('plot for equation of the form: y = w0 + w1*x')
     plt.savefig("gradient_descent.png")
+    plt.close()
     #raise NotImplementedError()
 
 ############################################
